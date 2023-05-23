@@ -5,7 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 const Navbar = () => {
   const { loginWithPopup, logout, isAuthenticated, user} = useAuth0();
 	return (
-		<div className="navbar bg-base-100">
+		<div className="navbar bg-base-100 py-2">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -15,6 +15,7 @@ const Navbar = () => {
       <Link to='/'><li><a>Home</a></li></Link>
       <Link to='/about'><li><a>About</a></li></Link>
       <Link to='/blog'><li><a>Blog</a></li></Link>
+      <Link to='/category'><li><a>Categories</a></li></Link>
       {isAuthenticated && 
       <li><p>Welcome, {user.name}</p></li>}
       {
@@ -28,13 +29,14 @@ const Navbar = () => {
       }
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">Rainbow</a>
+    <Link to='/' className='btn btn-ghost normal-case text-xl'><a>Rainbow Shop</a></Link>
   </div>
   <div className="navbar-end hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
       <Link to='/'><li><a>Home</a></li></Link>
       <Link to='/about'><li><a>About</a></li></Link>
       <Link to='/blog'><li><a>Blog</a></li></Link>
+      <Link to='/category'><li><a>Categories</a></li></Link>
       {isAuthenticated && 
       <li><p>Welcome, {user.name}</p></li>}
       {
