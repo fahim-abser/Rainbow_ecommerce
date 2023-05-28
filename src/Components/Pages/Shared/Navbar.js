@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
+import { FiShoppingCart } from "react-icons/fi";
+import './Navbar.css'
 
 const Navbar = () => {
   const { loginWithPopup, logout, isAuthenticated, user} = useAuth0();
@@ -16,6 +18,9 @@ const Navbar = () => {
       <Link to='/about'><li><a>About</a></li></Link>
       <Link to='/blog'><li><a>Blog</a></li></Link>
       <Link to='/category'><li><a>Categories</a></li></Link>
+      <Link to='/cart'><li className='cart-trolly-link'><a>
+      <FiShoppingCart></FiShoppingCart><span className='cart-item'>10</span>
+        </a></li></Link>
       {isAuthenticated && 
       <li><p>Welcome, {user.name}</p></li>}
       {
@@ -29,7 +34,7 @@ const Navbar = () => {
       }
       </ul>
     </div>
-    <Link to='/' className='btn btn-ghost normal-case text-xl'><a>Rainbow Shop</a></Link>
+    <Link to='/' className='btn btn-ghost normal-case text-xl'><a>Rainbow Restaurent</a></Link>
   </div>
   <div className="navbar-end hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -37,6 +42,7 @@ const Navbar = () => {
       <Link to='/about'><li><a>About</a></li></Link>
       <Link to='/blog'><li><a>Blog</a></li></Link>
       <Link to='/category'><li><a>Categories</a></li></Link>
+      
       {isAuthenticated && 
       <li><p>Welcome, {user.name}</p></li>}
       {
@@ -48,6 +54,9 @@ const Navbar = () => {
           <Link><li><button onClick={() => loginWithPopup()}>Log In</button></li></Link>
         )
       }
+      <Link to='/cart'><li className='cart-trolly-link'><a>
+      <FiShoppingCart></FiShoppingCart><span className='cart-item'>10</span>
+        </a></li></Link>
     </ul>
   </div>
 </div>

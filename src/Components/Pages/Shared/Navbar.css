@@ -1,0 +1,8 @@
+.cart-item{
+    position: relative;
+    top: -30%;
+    left: -20%;
+    background-color: rgb(64, 64, 85);
+    border-radius: 40%;
+    
+}
